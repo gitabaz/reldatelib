@@ -180,6 +180,13 @@ func TestLastFriday(t *testing.T) {
     cmpRes(t, act, exp)
 }
 
+func TestLastWednesday(t *testing.T) {
+    param := "last wednesday"
+    exp := runCmd(param)
+    act, _ := Parse(param)
+    cmpRes(t, act, exp)
+}
+
 func TestLastThursday(t *testing.T) {
     param := "last thursday"
     exp := runCmd(param)
