@@ -85,7 +85,7 @@ func Parse(str string) (string, error) {
             }
             wd, ok := weekdays[m[2]]
             if ok == true {
-                relWeekday := weekdays[strings.ToUpper(time.Now().UTC().Weekday().String())] - wd
+                relWeekday := weekdays[strings.ToUpper(t.Weekday().String())] - wd
                 offset := 0
                 if (numUnits * relWeekday >= 0) {
                     offset = prefactor * numUnits * 7 - relWeekday
