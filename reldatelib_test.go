@@ -75,6 +75,13 @@ func TestNWeeksAgo(t *testing.T) {
     cmpRes(t, act, exp)
 }
 
+func TestNegNWeeksAgo(t *testing.T) {
+    param := "-2 weeks ago"
+    exp := runCmd(param)
+    act, _ := Parse(param)
+    cmpRes(t, act, exp)
+}
+
 func TestNHoursAgo(t *testing.T) {
     param := "2 hours ago"
     exp := runCmd(param)

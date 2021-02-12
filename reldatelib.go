@@ -47,7 +47,7 @@ var weekdays = map[string]int{
     "SATURDAY": 5,
     "SUNDAY": 6}
 
-var regexStr = "(?P<num>\\d+|" + strings.Join(relTimeOrdKeys, "|") +
+var regexStr = "(?P<num>-?\\d+|" + strings.Join(relTimeOrdKeys, "|") +
                ")?\\s?(?P<unit>" + strings.Join(relTimeUnit, "|") + "|" + strings.Join(weekdayKeys, "|") +
                ")S?\\b\\s?(?P<ago>" + strings.Join(relTimeAgoKeys, "|") + ")?|^(" + strings.Join(relTimeShift, "|") + ")$"
 var r, _ = regexp.Compile(regexStr)
